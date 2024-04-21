@@ -1,0 +1,14 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: las-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: las-cronjob-container
+            image:  gcr.io/uptimebot/demo:v1.0.0
+          restartPolicy: OnFailure

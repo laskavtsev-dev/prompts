@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: las-app
+spec:
+  template:
+    spec:
+      containers:
+      - name: las-app-container
+        image: gcr.io/uptimebot/demo:v1.0.0
+        volumeMounts:
+        - name: las-volume
+          mountPath: /data
+      volumes:
+      - name: las-volume
+        emptyDir: {}
