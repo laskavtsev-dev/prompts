@@ -1,0 +1,11 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: las-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: las-job-container
+        image: gcr.io/uptimebot/demo:v1.0.0
+      restartPolicy: Never
