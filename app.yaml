@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: las-app
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: las-app
+  template:
+    metadata:
+      labels:
+        app: las-app
+    spec:
+      containers:
+      - name: las-app-container
+        image: gcr.io/uptimebot/demo:v1.0.0
+        ports:
+        - containerPort: 8080
+          name: http
